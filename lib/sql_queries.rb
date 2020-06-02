@@ -26,7 +26,7 @@ end
 
 def selects_the_titles_and_amount_over_goal_of_all_projects_that_have_met_their_funding_goal
   "
-  SELECT projects.title, pledges.amount
+  SELECT projects.title, pledges.amount-project.funding_goal
   FROM projects JOIN pledges
   WHERE projects.funding_goal <= pledges.amount"
 end
